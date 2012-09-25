@@ -5,6 +5,8 @@ module Temando
     # Provides the low-level SOAP formatting functionality.
     class Base
 
+      TEMANDO_NAMESPACE = "http://api.temando.com/schema/2009_06/server.xsd"
+
       def soap_boilerplate(&block)
         data = Nokogiri::XML::Builder.new do |xml|
           xml.Envelope("xmlns:soapenv" => "http://schemas.xmlsoap.org/soap/envelope/",

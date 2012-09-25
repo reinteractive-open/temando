@@ -12,9 +12,9 @@
     <tem:getQuotesByRequest xmlns:tem="http://api.temando.com/schema/2009_06/server.xsd">
       <anythings>
         <anything>
-          <class>Freight</class>
-          <mode>Less than load</mode>
-          <packaging>Carton</packaging>
+          <class>General Goods</class>
+          <subclass>Household Goods</subclass>
+          <packaging>Parcel</packaging>
           <qualifierFreightGeneralFragile>N</qualifierFreightGeneralFragile>
           <distanceMeasurementType>Centimetres</distanceMeasurementType>
           <weightMeasurementType>Kilograms</weightMeasurementType>

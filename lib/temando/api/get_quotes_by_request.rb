@@ -11,7 +11,24 @@ module Temando
 
       def request_xml
         soap_boilerplate do |xml|
+          xml.getQuotesByRequest('xmlns:tem' => TEMANDO_NAMESPACE) do
+            xml.parent.namespace = xml.parent.namespace_definitions.find { |x| x.prefix == 'tem' }
 
+            xml.anythings do
+              xml.parent.namespace = nil
+              @items.each do |anything|
+                Temando::Api::Entities::Anything.new(anything).build_xml(xml)
+              end
+            end
+
+            xml.anywhere do
+              xml.parent.namespace = nil
+              Temando::Api::Entities::Anywhere.new(@delivery).build_xml(xml)
+            end
+
+            # TODO: anytime
+            # TODO: general
+          end
         end
       end
 
