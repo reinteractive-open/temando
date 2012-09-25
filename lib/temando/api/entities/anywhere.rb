@@ -8,8 +8,8 @@ module Temando::Api
       def build_xml(xml)
         xml.anywhere do
           xml.parent.namespace = nil
-          xml.itemNature 'Domestic'
-          xml.itemMethod 'Door to Door'
+          xml.itemNature @anywhere.shipping_nature
+          xml.itemMethod @anywhere.shipping_method
           xml.originCountry @anywhere.origin.country
           xml.originCode @anywhere.origin.postcode
           xml.originSuburb @anywhere.origin.suburb
