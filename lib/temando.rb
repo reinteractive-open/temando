@@ -8,6 +8,11 @@ require "temando/item/general_goods"
 require "temando/delivery/base"
 require "temando/delivery/door_to_door"
 
+require "temando/quote"
+
+require "temando/api/base"
+require "temando/api/get_quotes_by_request"
+
 require "temando/request"
 
 module Temando

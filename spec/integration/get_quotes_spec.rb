@@ -35,6 +35,8 @@ describe "Get Quotes" do
                                                  :country => "AU"
                                                 )
 
+    stub_temando_request(request, 'get_quotes_by_request_response')
+
     quotes = request.quotes_for(anywhere)
 
     quotes.count.should == 2

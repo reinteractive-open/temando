@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Header>
+    <wsse:Security xmlns:wsse="http://schemas.xmlsoap.org/ws/2002/04/secext">
+      <wsse:UsernameToken>
+        <wsse:Username>username</wsse:Username>
+        <wsse:Password>password</wsse:Password>
+      </wsse:UsernameToken>
+    </wsse:Security>
+  </soapenv:Header>
+  <soapenv:Body>
+    <tem:getQuotesByRequest xmlns:tem="http://api.temando.com/schema/2009_06/server.xsd">
+      <anythings>
+        <anything>
+          <class>Freight</class>
+          <mode>Less than load</mode>
+          <packaging>Carton</packaging>
+          <qualifierFreightGeneralFragile>N</qualifierFreightGeneralFragile>
+          <distanceMeasurementType>Centimetres</distanceMeasurementType>
+          <weightMeasurementType>Kilograms</weightMeasurementType>
+          <length>10</length>
+          <width>10</width>
+          <height>10</height>
+          <weight>1</weight>
+          <quantity>2</quantity>
+          <description>Contains hats.</description>
+        </anything>
+      </anythings>
+      <anywhere>
+        <itemNature>Domestic</itemNature>
+        <itemMethod>Door to Door</itemMethod>
+        <originCountry>AU</originCountry>
+        <originCode>4000</originCode>
+        <originSuburb>Brisbane</originSuburb>
+        <destinationCountry>AU</destinationCountry>
+        <destinationCode>2000</destinationCode>
+        <destinationSuburb>Sydney</destinationSuburb>
+        <destinationIs>Residence</destinationIs>
+        <destinationResNotifyBefore>N</destinationResNotifyBefore>
+        <destinationResLimitedAccess>N</destinationResLimitedAccess>
+        <originIs>Business</originIs>
+        <originBusNotifyBefore>Y</originBusNotifyBefore>
+        <originBusLimitedAccess>N</originBusLimitedAccess>
+      </anywhere>
+      <anytime>
+        <readyDate>2009-07-01</readyDate>
+        <readyTime>PM</readyTime>
+      </anytime>
+      <general>
+        <goodsValue>50.00</goodsValue>
+      </general>
+    </tem:getQuotesByRequest>
+  </soapenv:Body>
+</soapenv:Envelope>

@@ -30,7 +30,23 @@ module Temando
     end
 
     def items=(new_items)
-      raise ArgumentError, "Only Temando::Item subclasses can be shipped" unless new_items.all? { |x| x.is_a?(Temando::Item::Base) }
+      raise ArgumentError, "Only Temando::Item::Base subclasses can be shipped" unless new_items.all? { |x| x.is_a?(Temando::Item::Base) }
+    end
+
+    def quotes_for(delivery)
+      raise ArgumentError, "Expected a Temando::Delivery::Base subclass" unless delivery.is_a?(Temando::Delivery::Base)
+
+      # Construct the request, dispatch it off to the server and return
+      # the result.
+      formatter = Temando::Api::GetQuotesByRequest.new(@items, delivery)
+      formatter.parse_response(dispatch_request(formatter.request_xml))
+    end
+
+  private
+
+    def dispatch_request(request_xml)
+      # TODO: HTTP POST
+      response = ''
     end
 
   end
