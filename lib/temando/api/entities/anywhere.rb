@@ -6,7 +6,23 @@ module Temando::Api
       end
 
       def build_xml(xml)
-        xml.TODO
+        xml.anywhere do
+          xml.parent.namespace = nil
+          xml.itemNature 'Domestic'
+          xml.itemMethod 'Door to Door'
+          xml.originCountry @anywhere.origin.country
+          xml.originCode @anywhere.origin.postcode
+          xml.originSuburb @anywhere.origin.suburb
+          xml.destinationCountry @anywhere.destination.country
+          xml.destinationCode @anywhere.destination.postcode
+          xml.destinationSuburb @anywhere.destination.suburb
+          xml.destinationIs 'Residence'
+          xml.destinationResNotifyBefore 'N'
+          xml.destinationResLimitedAccess 'N'
+          xml.originIs 'Business'
+          xml.originBusNotifyBefore 'Y'
+          xml.originBusLimitedAccess 'N'
+        end
       end
     end
   end

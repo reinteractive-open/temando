@@ -10,16 +10,18 @@ module Temando
     class Base
       attr_reader :origin, :destination
 
-      def initialize(attributes={})
+      def initialize(origin = nil, destination = nil)
+        self.origin=(origin)
+        self.destination=(destination)
       end
 
       def origin=(location)
-        raise ArgumentError, "Expected Temando::Location" unless location.is_a?(Temando::Location)
+        raise ArgumentError, "Expected Temando::Location" unless location.nil? || location.is_a?(Temando::Location)
         @origin = location
       end
 
       def destination=(location)
-        raise ArgumentError, "Expected Temando::Location" unless location.is_a?(Temando::Location)
+        raise ArgumentError, "Expected Temando::Location" unless location.nil? || location.is_a?(Temando::Location)
         @destination = location
       end
     end

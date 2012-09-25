@@ -42,13 +42,6 @@
         <originBusNotifyBefore>Y</originBusNotifyBefore>
         <originBusLimitedAccess>N</originBusLimitedAccess>
       </anywhere>
-      <anytime>
-        <readyDate>2009-07-01</readyDate>
-        <readyTime>PM</readyTime>
-      </anytime>
-      <general>
-        <goodsValue>50.00</goodsValue>
-      </general>
     </tem:getQuotesByRequest>
   </soapenv:Body>
 </soapenv:Envelope>

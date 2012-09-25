@@ -21,10 +21,7 @@ module Temando
               end
             end
 
-            xml.anywhere do
-              xml.parent.namespace = nil
-              Temando::Api::Entities::Anywhere.new(@delivery).build_xml(xml)
-            end
+            Temando::Api::Entities::Anywhere.new(@delivery).build_xml(xml)
 
             # TODO: anytime
             # TODO: general

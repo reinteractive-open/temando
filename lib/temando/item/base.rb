@@ -17,6 +17,9 @@ module Temando
       attr :description, true
 
       def initialize(attributes={})
+        attributes.each do |key, value|
+          self.send("#{key}=".intern, value)
+        end
       end
     end
  end
