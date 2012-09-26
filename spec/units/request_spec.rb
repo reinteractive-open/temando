@@ -34,4 +34,8 @@ describe Temando::Request do
     end
   end
 
+  describe ".dispatch_request" do
+
+  end
+
 end

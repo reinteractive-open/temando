@@ -29,6 +29,10 @@ module Temando
         end
       end
 
+      def parse_response(response_xml)
+        response_xml
+      end
+
     end
   end
 end

@@ -18,7 +18,7 @@ describe "Get Quotes" do
                                             :street => "123 Test Street",
                                             :suburb => "Sydney",
                                             :state => "NSW",
-                                            :code => "2000",
+                                            :postcode => "2000",
                                             :phone1 => Faker::PhoneNumber.phone_number,
                                             :email => Faker::Internet.email,
                                             :country => "AU"
@@ -29,24 +29,19 @@ describe "Get Quotes" do
                                                  :street => "123 Test Street",
                                                  :suburb => "Sydney",
                                                  :state => "NSW",
-                                                 :code => "2000",
+                                                 :postcode => "2000",
                                                  :phone1 => Faker::PhoneNumber.phone_number,
                                                  :email => Faker::Internet.email,
                                                  :country => "AU"
                                                 )
 
-    stub_temando_request(request, 'get_quotes_by_request_response')
+    stub_temando_request(request, xml_fixture('get_quotes_by_request/response'))
 
     quotes = request.quotes_for(anywhere)
-
-    quotes.count.should == 2
+    quotes.should be_a(Array)
+    quotes.count.should == 1
 
     quote = quotes.first
     quote.should be_a(Temando::Quote)
-    quote.total_price.should == 11.00
-    quote.tax.shuold == 1.0
-    quote.currency.should == 'AUD'
-    quote.minimum_eta = 3
-    quote.maximum_eta = 5
   end
 end

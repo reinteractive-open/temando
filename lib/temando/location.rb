@@ -2,7 +2,7 @@ module Temando
   # A Temando::Location represents address and contact details for
   # pickup or delivery of a shipment.
   class Location
-    FIELDS = %w( country postcode suburb )
+    FIELDS = %w( country postcode suburb contact state street phone1 phone2 email company )
 
     FIELDS.each { |x| attr x.intern, true }
     def initialize(attributes={})

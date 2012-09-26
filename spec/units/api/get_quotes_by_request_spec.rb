@@ -27,4 +27,19 @@ describe Temando::Api::GetQuotesByRequest do
     end
   end
 
+  describe ".parse_response" do
+    it "decodes the SOAP response" do
+      result = subject.parse_response(xml_fixture('get_quotes_by_request/response'))
+      result.should be_a(Array)
+
+      quote = result.first
+      quote.should be_a(Temando::Quote)
+      quote.total_price.should == 11.00
+      quote.tax.shuold == 1.0
+      quote.currency.should == 'AUD'
+      quote.minimum_eta.should = 3
+      quote.maximum_eta.should = 5
+    end
+  end
+
 end
