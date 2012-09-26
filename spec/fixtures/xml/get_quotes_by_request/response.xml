@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <soap-env:Header/>
-  <soap-env:Body>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SOAP-ENV:Header/>
+  <SOAP-ENV:Body>
     <ns1:getQuotesByRequestResponse xmlns:ns1="http://api.temando.com/schema/2009_06/server.xsd">
       <quote>
         <generated>Automatically</generated>
@@ -76,5 +76,5 @@
         </carrier>
       </quote>
     </ns1:getQuotesByRequestResponse>
-  </soap-env:Body>
-</soap-env:Envelope>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

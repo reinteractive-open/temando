@@ -28,7 +28,7 @@ describe Temando::Request do
       response = [ Temando::Quote.new ]
 
       format.should_receive(:parse_response).with('RESPONSE XML').and_return(response)
-      request.should_receive(:dispatch_request).with('REQUEST XML').and_return('RESPONSE XML')
+      request.client.should_receive(:dispatch).with('REQUEST XML').and_return('RESPONSE XML')
 
       request.quotes_for(delivery) #.should == response
     end

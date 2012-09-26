@@ -12,6 +12,7 @@ require "temando/delivery/door_to_door"
 
 require "temando/quote"
 
+require "temando/api/soap_client"
 require "temando/api/base"
 require "temando/api/entities/anything"
 require "temando/api/entities/anywhere"
