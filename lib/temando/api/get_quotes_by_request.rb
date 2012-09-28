@@ -30,9 +30,11 @@ module Temando
       end
 
       def parse_response(response_xml)
-        response_xml
+        xml = Nokogiri::XML(response_xml)
+        quotes = xml.xpath('//quote').collect do |result|
+          Temando::Api::Entities::Quote.parse_xml(result.to_xml)
+        end
       end
-
     end
   end
 end
