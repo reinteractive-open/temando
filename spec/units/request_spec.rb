@@ -30,7 +30,7 @@ describe Temando::Request do
       format.should_receive(:parse_response).with('RESPONSE XML').and_return(response)
       request.client.should_receive(:dispatch).with('REQUEST XML').and_return('RESPONSE XML')
 
-      request.quotes_for(delivery) #.should == response
+      request.quotes_for(delivery).should == response
     end
   end
 
