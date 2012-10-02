@@ -22,8 +22,8 @@ describe Temando::Request, :remote => true do
       item.height = 0.10
       item.weight = 1
 
-      Temando::Api::Base.config.username = 'foo'
-      Temando::Api::Base.config.password = 'bar'
+      Temando::Api::Base.config.username = 'username'
+      Temando::Api::Base.config.password = 'password'
 
       response = request.quotes_for(delivery)
 

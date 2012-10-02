@@ -1,23 +1,31 @@
+require 'active_support/configurable'
+
 module Temando
   module Api
     class SoapClient
+      include ActiveSupport::Configurable
+
       attr_reader :last_request, :last_response
+      config_accessor :service_url
+
+      config.service_url = "https://api.temando.com/soapServer.html"
 
       def dispatch(request_xml)
         response = ''
 
-        @@service_url = "https://api.temando.com/soapServer.html"
-
         @last_request = request_xml
-        response = Typhoeus::Request.post(@@service_url,
-                                          :body => request_xml,
-                                          :headers => {'Content-Type' => "text/xml; charset=utf-8"}
-                                         )
 
-        process_response(response)
+        process_response(perform_request(request_xml))
       end
 
     private
+
+      def perform_request(request_xml)
+        Typhoeus::Request.post(service_url,
+                               :body => request_xml,
+                               :headers => {'Content-Type' => "text/xml; charset=utf-8"}
+                              )
+      end
 
       # Processes the response and decides whether to handle an error or whether to return the content
       def process_response(response)
@@ -26,8 +34,7 @@ module Temando
         if response.body =~ /:Fault>/ then
           handle_error(response)
         else
-          debug response.body
-          return response
+          return response.body
         end
       end
 
