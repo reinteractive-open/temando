@@ -21,13 +21,17 @@ module Temando
   #   quotes = request.quotes_for(anywhere)
   #
   #   quotes.first # => #<Temando::Quote>
+  #
+  # Temando authentication details should be set before calling these methods :
+  #
+  #   Temando::Api::Base.config.username = 'myuser@example.com'
+  #   Temando::Api::Base.config.password = 'sekrit'
   class Request
 
-    attr_reader :items, :client
+    attr_reader :items
 
     def initialize
       @items = []
-      @client = Temando::Api::SoapClient.new
     end
 
     def items=(new_items)
@@ -40,8 +44,12 @@ module Temando
       # Construct the request, dispatch it off to the server and return
       # the result.
       formatter = Temando::Api::GetQuotesByRequest.new(@items, delivery)
-      response  = @client.dispatch(formatter.request_xml)
+      response  = client.dispatch(formatter.request_xml)
       formatter.parse_response(response)
+    end
+
+    def client
+      @client ||= Temando::Api::SoapClient.new
     end
   end
 end

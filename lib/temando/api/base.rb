@@ -1,9 +1,13 @@
+require 'active_support/configurable'
 require 'nokogiri'
 
 module Temando
   module Api
     # Provides the low-level SOAP formatting functionality.
     class Base
+      include ActiveSupport::Configurable
+
+      config_accessor :username, :password
 
       TEMANDO_NAMESPACE = "http://api.temando.com/schema/2009_06/server.xsd"
 
@@ -19,8 +23,8 @@ module Temando
               xml.Security("xmlns:wsse" => "http://schemas.xmlsoap.org/ws/2002/04/secext") do
                 xml.parent.namespace = xml.parent.namespace_definitions.find { |x| x.prefix == 'wsse' }
                 xml['wsse'].UsernameToken do
-                  xml['wsse'].Username 'username'
-                  xml['wsse'].Password 'password'
+                  xml['wsse'].Username Temando::Api::Base.username
+                  xml['wsse'].Password Temando::Api::Base.password
                 end
               end
             end

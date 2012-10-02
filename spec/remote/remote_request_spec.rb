@@ -16,10 +16,14 @@ describe Temando::Request, :remote => true do
     let(:request) { subject.items << item; subject }
 
     it "dispatches the data in and out from Temando::Api::GetQuotesByRequest" do
+      pending "test API account from Temando"
       item.length = 0.10
       item.width = 0.10
       item.height = 0.10
       item.weight = 1
+
+      Temando::Api::Base.config.username = 'foo'
+      Temando::Api::Base.config.password = 'bar'
 
       response = request.quotes_for(delivery)
 
