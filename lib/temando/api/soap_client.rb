@@ -34,7 +34,7 @@ module Temando
         if response.body =~ /:Fault>/ then
           handle_error(response)
         else
-          return response.body
+          response.body
         end
       end
 

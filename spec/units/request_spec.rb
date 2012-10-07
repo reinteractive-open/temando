@@ -11,10 +11,6 @@ describe Temando::Request do
     let(:delivery) { Temando::Delivery::DoorToDoor.new }
     let(:request) { subject.items << item; subject }
 
-    it "raises an exception if the provided argument isn't a Temando::Delivery subclass" do
-      lambda { request.quotes_for(item) }.should raise_exception(ArgumentError)
-    end
-
     it "dispatches the data in and out from Temando::Api::GetQuotesByRequest" do
       item.length = 0.10
       item.width = 0.10

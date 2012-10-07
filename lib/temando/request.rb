@@ -28,19 +28,13 @@ module Temando
   #   Temando::Api::Base.config.password = 'sekrit'
   class Request
 
-    attr_reader :items
+    attr_accessor :items
 
     def initialize
       @items = []
     end
 
-    def items=(new_items)
-      raise ArgumentError, "Only Temando::Item::Base subclasses can be shipped" unless new_items.all? { |x| x.is_a?(Temando::Item::Base) }
-    end
-
     def quotes_for(delivery)
-      raise ArgumentError, "Expected a Temando::Delivery::Base subclass" unless delivery.is_a?(Temando::Delivery::Base)
-
       # Construct the request, dispatch it off to the server and return
       # the result.
       formatter = Temando::Api::GetQuotesByRequest.new(@items, delivery)

@@ -9,12 +9,7 @@ module Temando
     # subclasses, Temando::Item::GeneralGoods, Temando::Item::Freight,
     # etc.
     class Base
-      attr :length, true
-      attr :width, true
-      attr :height, true
-      attr :weight, true
-      attr :quantity, true
-      attr :description, true
+      attr_accessor :length, :width, :height, :weight, :quantity, :description
 
       def initialize(attributes={})
         attributes.each do |key, value|

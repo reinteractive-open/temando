@@ -8,10 +8,6 @@ describe Temando::Delivery::DoorToDoor do
     it "accepts Temando::Location" do
       lambda { subject.origin = Temando::Location.new }.should_not raise_exception
     end
-
-    it "raises an exception if an unhandled object is appended" do
-      lambda { subject.origin = Temando::Item::Base.new }.should raise_exception(ArgumentError)
-    end
   end
 
   describe ".destination" do
@@ -19,10 +15,6 @@ describe Temando::Delivery::DoorToDoor do
 
     it "accepts Temando::Location" do
       lambda { subject.destination = Temando::Location.new }.should_not raise_exception
-    end
-
-    it "raises an exception if an unhandled object is appended" do
-      lambda { subject.destination = Temando::Item::Base.new }.should raise_exception(ArgumentError)
     end
   end
 
