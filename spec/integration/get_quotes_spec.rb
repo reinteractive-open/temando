@@ -4,13 +4,7 @@ describe "Get Quotes" do
 
   it "can get the quotes from Temando" do
     request = Temando::Request.new
-    request.items << Temando::Item::GeneralGoods.new(:height => 0.10,
-                                                     :length => 0.10,
-                                                     :width => 0.10,
-                                                     :weight => 1,
-                                                     :quantity => 1,
-                                                     :description => 'Hats'
-                                                    )
+    request.items << valid_temando_item
 
     anywhere = Temando::Delivery::DoorToDoor.new
     anywhere.origin = Temando::Location.new(:contact => "Joe Bloggs",

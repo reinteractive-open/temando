@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Temando::Request, :remote => true do
 
   describe ".quotes_for" do
-    let(:item) { Temando::Item::GeneralGoods.new }
+    let(:item) { valid_temando_item }
     let(:origin) { Temando::Location.new(:country => 'AU',
                                          :suburb => 'Brisbane',
                                          :postcode => '4000'
@@ -17,10 +17,6 @@ describe Temando::Request, :remote => true do
 
     it "dispatches the data in and out from Temando::Api::GetQuotesByRequest" do
       pending "test API account from Temando"
-      item.length = 0.10
-      item.width = 0.10
-      item.height = 0.10
-      item.weight = 1
 
       Temando::Api::Base.config.username = 'username'
       Temando::Api::Base.config.password = 'password'

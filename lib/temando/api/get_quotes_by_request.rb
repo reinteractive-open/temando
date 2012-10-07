@@ -7,6 +7,8 @@ module Temando
       def initialize(items, delivery)
         @items = items
         @delivery = delivery
+
+        @items.each { |item| validate_item(item) }
       end
 
       def request_xml
@@ -34,6 +36,12 @@ module Temando
         quotes = xml.xpath('//quote').collect do |result|
           Temando::Api::Entities::Quote.parse_xml(result.to_xml)
         end
+      end
+
+    private
+
+      def validate_item(item)
+        raise ArgumentError, "#{item.inspect} is not valid" unless item.valid?
       end
     end
   end

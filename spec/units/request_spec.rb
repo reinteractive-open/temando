@@ -7,16 +7,11 @@ describe Temando::Request do
   end
 
   describe ".quotes_for" do
-    let(:item) { Temando::Item::GeneralGoods.new }
+    let(:item) { valid_temando_item }
     let(:delivery) { Temando::Delivery::DoorToDoor.new }
     let(:request) { subject.items << item; subject }
 
     it "dispatches the data in and out from Temando::Api::GetQuotesByRequest" do
-      item.length = 0.10
-      item.width = 0.10
-      item.height = 0.10
-      item.weight = 1
-
       format = mock(Temando::Api::GetQuotesByRequest)
       Temando::Api::GetQuotesByRequest.should_receive(:new).with([item], delivery).and_return(format)
       format.should_receive(:request_xml).and_return('REQUEST XML')
