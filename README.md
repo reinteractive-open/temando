@@ -20,6 +20,12 @@ Or install it yourself as:
 
 TODO: Write usage instructions here
 
+## Tests
+
+`rake spec` to run the tests.
+
+`rake spec:remote` to run the remote specs.
+
 ## Contributing
 
 1. Fork it
