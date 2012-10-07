@@ -29,7 +29,7 @@ module Temando
 
       # Processes the response and decides whether to handle an error or whether to return the content
       def process_response(response)
-        @last_response = response
+        @last_response = response.body
 
         if response.body =~ /:Fault>/ then
           handle_error(response)

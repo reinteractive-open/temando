@@ -14,6 +14,8 @@ module Temando::Api
         quote.tax         = BigDecimal.new(hash['tax'])
         quote.currency    = hash['currency']
 
+        quote.name        = hash['deliveryMethod']
+
         quote.minimum_eta = hash['etaFrom'].to_i
         quote.maximum_eta = hash['etaTo'].to_i
 

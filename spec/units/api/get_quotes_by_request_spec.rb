@@ -26,5 +26,4 @@ describe Temando::Api::GetQuotesByRequest do
       result = subject.parse_response(xml_fixture('get_quotes_by_request/response'))
     end
   end
-
 end
