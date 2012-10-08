@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SOAP-ENV:Header/>
+  <SOAP-ENV:Body>
+    <ns1:getQuotesByRequestResponse xmlns:ns1="http://api.temando.com/schema/2009_06/server.xsd">
+      <quote>
+        <generated>Automatically</generated>
+        <accepted>N</accepted>
+        <totalPrice>11.00</totalPrice>
+        <basePrice>10.00</basePrice>
+        <tax>1.00</tax>
+        <currency>AUD</currency>
+        <deliveryMethod>Off-peak</deliveryMethod>
+        <usingGeneralRail>N</usingGeneralRail>
+        <usingGeneralRoad>Y</usingGeneralRoad>
+        <usingGeneralSea>N</usingGeneralSea>
+        <usingExpressAir>N</usingExpressAir>
+        <usingExpressRoad>N</usingExpressRoad>
+        <etaFrom>2</etaFrom>
+        <etaTo>3</etaTo>
+        <guaranteedEta>Y</guaranteedEta>
+        <adjustments>
+          <adjustment>
+            <description>Credit Card Payment Adjustment</description>
+            <amount>0.20</amount>
+            <tax>0.02</tax>
+          </adjustment>
+          <adjustment>
+            <description>Credit Payment Adjustment</description>
+            <amount>-0.20</amount>
+            <tax>-0.02</tax>
+          </adjustment>
+        </adjustments>
+        <inclusions><inclusion><summary>Tracking available</summary><details>Tracking information will be available for this quote.
+          </details></inclusion>
+￼￼￼￼￼￼￼     <inclusion><summary>Automatic Booking</summary><details>Automatic booking generated.</details></inclusion>
+     <inclusion><summary>Automatic Consignment</summary><details>Automatic consignment note generated.</details></inclusion>
+    </inclusions>
+        <extras>
+          <extra>
+            <summary>Insurance</summary>
+            <details>Insurance cover up to $5,000.</details>
+            <totalPrice>2.20</totalPrice>
+            <basePrice>2.00</basePrice>
+            <tax>0.20</tax>
+            <mandatory>Y</mandatory>
+            <adjustments>
+              <adjustment>
+                <description>Credit Card Payment Adjustment</description>
+                <amount>0.04</amount>
+                <tax>0.00</tax>
+              </adjustment>
+            </adjustments>
+          </extra>
+        </extras>
+        <carrier>
+          <id>654321</id>
+          <companyName>ZYX Transport</companyName>
+          <companyContact>John Doe</companyContact>
+          <streetAddress>1 Transport Street</streetAddress>
+          <streetSuburb>Brisbane</streetSuburb>
+          <streetCity>Brisbane</streetCity>
+          <streetState>QLD</streetState>
+          <streetCode>4000</streetCode>
+          <streetCountry>AU</streetCountry>
+          <postalAddress>PO Box 1111</postalAddress>
+          <postalSuburb>Brisbane</postalSuburb>
+          <postalCity>Brisbane</postalCity>
+          <postalState>QLD</postalState>
+          <postalCode>4001</postalCode>
+          <postalCountry>AU</postalCountry>
+          <phone1>(07) 3333 3333</phone1>
+          <email>john.doe@zyxtransport.com.au</email>
+          <website>https://www.zyxtransport.com.au</website>
+          <conditions>Our conditions include: lots of text.</conditions>
+        </carrier>
+      </quote>
+    </ns1:getQuotesByRequestResponse>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
