@@ -7,7 +7,7 @@ module Temando
     class Base
       include ActiveSupport::Configurable
 
-      config_accessor :username, :password
+      config_accessor :username, :password, :logger
 
       TEMANDO_NAMESPACE = "http://api.temando.com/schema/2009_06/server.xsd"
 

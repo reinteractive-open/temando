@@ -20,7 +20,12 @@ module Temando
 
     private
 
+      def logger
+        Temando::Api::Base.logger
+      end
+
       def perform_request(request_xml)
+        logger.debug request_xml if logger.present?
         Typhoeus::Request.post(service_url,
                                :body => request_xml,
                                :headers => {'Content-Type' => "text/xml; charset=utf-8"}
@@ -30,6 +35,8 @@ module Temando
       # Processes the response and decides whether to handle an error or whether to return the content
       def process_response(response)
         @last_response = response.body
+
+        logger.debug @last_response if logger.present?
 
         if response.body =~ /:Fault>/ then
           handle_error(response)
