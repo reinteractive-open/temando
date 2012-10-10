@@ -11,9 +11,12 @@ describe Temando::Api::Entities::Quote do
       quote.should be_a(Temando::Quote)
       quote.total_price.should == 11.00
       quote.tax.should == 1.0
+      quote.base_price.should == 10.00
       quote.currency.should == 'AUD'
       quote.minimum_eta.should == 2
       quote.maximum_eta.should == 3
+      quote.guaranteed_eta.should be_true
+      quote.carrier_id.should == '654321'
     end
   end
 
