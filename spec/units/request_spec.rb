@@ -24,9 +24,4 @@ describe Temando::Request do
       request.quotes_for(delivery).should == response
     end
   end
-
-  describe ".dispatch_request" do
-
-  end
-
 end
