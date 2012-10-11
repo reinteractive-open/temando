@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Temando::Api::SoapClient do
 
-  describe ".dispatch" do
+  describe ".dispatch", :disable_remote => false do
     let(:ok_response)  { r = mock(Typhoeus::Response); r.stub(:body).and_return(xml_fixture('get_quotes_by_request/response')); r }
     let(:bad_response) { r = mock(Typhoeus::Response); r.stub(:body).and_return(xml_fixture('exceptions/failed_auth')); r }
 
