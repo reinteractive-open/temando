@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Header>
+    <wsse:Security xmlns:wsse="http://schemas.xmlsoap.org/ws/2002/04/secext">
+      <wsse:UsernameToken>
+        <wsse:Username>username</wsse:Username>
+        <wsse:Password>password</wsse:Password>
+      </wsse:UsernameToken>
+    </wsse:Security>
+ ￼</soapenv:Header>
+  <soapenv:Body>
+    <tem:makeBookingByRequest xmlns:tem="http://api.temando.com/schema/2009_06/server.xsd">
+      <anythings>
+        <anything>
+          <class>Freight</class>
+          <mode>Less than load</mode>
+          <packaging>Carton</packaging>
+          <qualifierFreightGeneralFragile>N</qualifierFreightGeneralFragile>
+          <distanceMeasurementType>Centimetres</distanceMeasurementType>
+          <weightMeasurementType>Kilograms</weightMeasurementType>
+          <length>10</length>
+          <width>10</width>
+          <height>10</height>
+          <weight>1</weight>
+          <quantity>2</quantity>
+          <description>Contains hats.</description>
+        </anything>
+      </anythings>
+      <anywhere>
+        <itemNature>Domestic</itemNature>
+        <itemMethod>Door to Door</itemMethod>
+        <destinationCountry>AU</destinationCountry>
+        <destinationCode>2000</destinationCode>
+        <destinationSuburb>Sydney</destinationSuburb>
+        <destinationIs>Residence</destinationIs>
+        <destinationResPostalBox>N</destinationResPostalBox>
+        <destinationResUnattended>N</destinationResUnattended>
+        <destinationResInside>N</destinationResInside>
+        <destinationResLimitedAccess>N</destinationResLimitedAccess>
+        <destinationResHeavyLift>N</destinationResHeavyLift>
+        <originDescription>ABC Suppliers</originDescription>
+        <originBusUnattended>N</originBusUnattended>
+        <originBusInside>N</originBusInside>
+        <originBusHeavyLift>N</originBusHeavyLift>
+        <originBusTailgateLifter>N</originBusTailgateLifter>
+        <originBusContainerSwingLifter>N</originBusContainerSwingLifter>
+      </anywhere>
+      <origin>
+        <description>ABC Suppliers</description>
+      </origin>
+      <destination>
+        <contactName>Jane Doe</contactName>
+        <street>2 Recipient Street</street>
+        <suburb>Sydney</suburb>
+        <state>NSW</state>
+        <code>2000</code>
+        <country>AU</country>
+        <phone1>(02) 9333 3333</phone1>
+        <phone2/>
+        <fax>(02) 9333 3331</fax>
+        <email>jane.doe@yahoo.com.au</email>
+      </destination>
+      <quote>
+        <totalPrice>11.00</totalPrice>
+        <basePrice>10.00</basePrice>
+        <tax>1.00</tax>
+        <currency>AUD</currency>
+        <deliveryMethod>Off-peak</deliveryMethod>
+        <etaFrom>2</etaFrom>
+        <etaTo>3</etaTo>
+        <guaranteedEta>Y</guaranteedEta>
+        <carrierId>654321</carrierId>
+        <extras>
+          <extra>
+            <summary>Insurance</summary>
+            <totalPrice>2.20</totalPrice>
+            <basePrice>2.00</basePrice>
+            <tax>0.20</tax>
+          </extra>
+        </extras>
+      </quote>
+      <payment>
+        <paymentType>Account</paymentType>
+      </payment>
+      <reference>ABC200000</reference>
+      <comments>Please don't use any chains on the axle.</comments>
+    </tem:makeBookingByRequest>
+  </soapenv:Body>
+</soapenv:Envelope>

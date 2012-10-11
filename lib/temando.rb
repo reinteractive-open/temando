@@ -20,6 +20,7 @@ require "temando/api/entities/anywhere"
 require "temando/api/entities/quote"
 require "temando/api/entities/booking"
 require "temando/api/get_quotes_by_request"
+require "temando/api/make_booking_by_request"
 
 require "temando/api/exceptions/soap_error"
 

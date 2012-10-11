@@ -5,9 +5,6 @@ module Temando::Api
     # Handles turning a SOAP <ns1:makeBookingByRequestResponse> element into a Temando::Booking and
     # back again.
     class Booking
-
-      NAMESPACE = Temando::Api::Base::TEMANDO_NAMESPACE
-
       def self.parse_xml(booking_xml)
         hash = Hash.from_xml(booking_xml)['makeBookingByRequestResponse']
         booking = Temando::Booking.new

@@ -3,9 +3,6 @@ require 'spec_helper'
 describe "Get Quotes" do
 
   it "can get the quotes from Temando" do
-    request = Temando::Request.new
-    request.items << valid_temando_item
-
     anywhere = Temando::Delivery::DoorToDoor.new
     anywhere.origin = Temando::Location.new(:contact => "Joe Bloggs",
                                             :company => "Bloggs Inc.",
@@ -28,6 +25,8 @@ describe "Get Quotes" do
                                                  :email => Faker::Internet.email,
                                                  :country => "AU"
                                                 )
+
+    request = valid_temando_request
 
     stub_temando_request(request, xml_fixture('get_quotes_by_request/response'))
 
