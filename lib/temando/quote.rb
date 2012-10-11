@@ -9,5 +9,13 @@ module Temando
         self.send("#{key}=".intern, value)
       end
     end
+
+    def guaranteed_eta_string
+      if guaranteed_eta then
+        'Y'
+      else
+        'N'
+      end
+    end
   end
 end

@@ -24,12 +24,9 @@ module Temando
 
             Temando::Api::Entities::Anywhere.new(@delivery).build_xml(xml)
 
-            xml.origin do
-              xml.parent.namespace = nil
-              xml.description @delivery.origin.company
-            end
+            Temando::Api::Entities::Location.new(:origin, @delivery.origin).build_xml(xml)
+            Temando::Api::Entities::Location.new(:destination, @delivery.destination).build_xml(xml)
 
-            Temando::Api::Entities::Location.new(@delivery.destination).build_xml(xml)
             Temando::Api::Entities::Quote.new(@quote).build_xml(xml)
 
             # TODO: payment
