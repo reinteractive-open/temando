@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["jason@reinteractive.net"]
   gem.description   = %q{Ruby API to Temando - an Australian transport fulfilment broker}
   gem.summary       = %q{Ruby API to Temando - an Australian transport fulfilment broker}
-  gem.homepage      = ""
+  gem.homepage      = "http://github.com/reInteractive-open/temando"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }

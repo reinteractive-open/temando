@@ -1,7 +1,7 @@
 # Temando
 
 The `temando` gem provides a Ruby interface to the
-"Temando"[https://www.temando.com/] shipping fulfilment provider.
+[Temando](https://www.temando.com/) shipping fulfilment provider.
 
 Currently, it only supports fetching quotes from the API and returning
 them.
