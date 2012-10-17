@@ -31,7 +31,7 @@ Temando authentication details should be set before calling any methods :
 
 Example:
 
-``ruby
+```ruby
 request = Temando::Request.new
 
 # Add the items to be shipped
