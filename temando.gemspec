@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["jason@reinteractive.net"]
   gem.description   = %q{Ruby API to Temando - an Australian transport fulfilment broker}
   gem.summary       = %q{Ruby API to Temando - an Australian transport fulfilment broker}
-  gem.homepage      = ""
+  gem.homepage      = "http://github.com/reInteractive/temando"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
@@ -17,6 +17,9 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency 'nokogiri'
   gem.add_dependency 'typhoeus', '~> 0.4.2'
+  gem.add_dependency 'activesupport'
+  gem.add_dependency 'activemodel'
 
   gem.add_development_dependency 'rspec', '~> 2.11.0'
+  gem.add_development_dependency 'faker'
 end

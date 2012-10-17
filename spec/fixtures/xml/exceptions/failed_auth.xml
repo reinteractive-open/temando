@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Body>
+    <SOAP-ENV:Fault>
+      <faultcode>Err_Access03</faultcode>
+      <faultstring>The login details you have provided are either not a valid Username and Password combination or an invalid id.</faultstring>
+      <faultactor>https://api.temando.com/soapServer.html</faultactor>
+    </SOAP-ENV:Fault>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

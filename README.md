@@ -1,6 +1,10 @@
 # Temando
 
-TODO: Write a gem description
+The `temando` gem provides a Ruby interface to the
+[Temando](https://www.temando.com/) shipping fulfilment provider.
+
+Currently, it only supports fetching quotes from the API and returning
+them.
 
 ## Installation
 
@@ -18,7 +22,38 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Temando authentication details should be set before calling any methods :
+
+```ruby
+ Temando::Api::Base.config.username = 'myuser@example.com'
+ Temando::Api::Base.config.password = 'sekrit'
+```
+
+Example:
+
+``ruby
+request = Temando::Request.new
+
+# Add the items to be shipped
+request.items << Temando::Item::GeneralGoods.new(...)
+request.items << Temando::Item::GeneralGoods.new(...)
+
+# Add the details for the actual shipment method and its locations
+anywhere = Temando::Delivery::DoorToDoor.new
+anywhere.origin      = Temando::Location.new(...)
+anywhere.destination = Temando::Location.new(...)
+
+# Ask the server for the quotes
+quotes = request.quotes_for(anywhere)
+
+quotes.first # => #<Temando::Quote>
+```
+
+## Tests
+
+`rake spec` to run the tests.
+
+`rake spec:remote` to run the remote specs.
 
 ## Contributing
 
