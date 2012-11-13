@@ -14,7 +14,7 @@ module Temando
 
       include ActiveModel::Validations
 
-      attr_accessor :length, :width, :height, :weight, :quantity, :description
+      attr_accessor :length, :width, :height, :weight, :quantity, :description, :packaging_optimization
 
       validates_numericality_of :length, :width, :height
       validates_numericality_of :quantity, :greater_than => 0, :only_integer => true

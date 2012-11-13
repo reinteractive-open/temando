@@ -8,6 +8,7 @@ module Temando::Api
       def build_xml(xml)
         xml.anything do
           xml.class_ @anything.shipping_class
+          xml.packagingOptimisation(@anything.packaging_optimization.present? ? @anything.packaging_optimization : "N")
           xml.subclass @anything.shipping_subclass
           xml.packaging @anything.shipping_packaging
           xml.qualifierFreightGeneralFragile(@anything.fragile ? 'Y' : 'N')
