@@ -22,6 +22,10 @@ module Temando::Api
         quote.guaranteed_eta = (hash['guaranteedEta'] == 'Y')
 
         quote.carrier_id  = hash['carrier']['id']
+        quote.carrier_name = hash['carrier']['companyName']
+        quote.carrier_phone = hash['carrier']['phone1']
+
+        quote.delivery_method = hash['deliveryMethod']
 
         quote
       end
