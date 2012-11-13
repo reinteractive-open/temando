@@ -13,6 +13,7 @@
       <anythings>
         <anything>
           <class>General Goods</class>
+          <packagingOptimisation>N</packagingOptimisation>
           <subclass>Household Goods</subclass>
           <packaging>Parcel</packaging>
           <qualifierFreightGeneralFragile>N</qualifierFreightGeneralFragile>
