@@ -18,4 +18,15 @@ describe Temando::Item::GeneralGoods do
       valid_item.should_not be_valid
     end
   end
+
+  describe ".shipping_packaging" do
+    it 'defaults to "Parcel"' do
+      valid_item.shipping_packaging.should == 'Parcel'
+    end
+
+    it 'can be set and read' do
+      valid_item.shipping_packaging = 'Pallet'
+      valid_item.shipping_packaging.should == 'Pallet'
+    end
+  end
 end
