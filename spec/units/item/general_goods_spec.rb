@@ -29,4 +29,27 @@ describe Temando::Item::GeneralGoods do
       valid_item.shipping_packaging.should == 'Pallet'
     end
   end
+
+  describe ".pallet_type" do
+    it 'defaults to nil' do
+      valid_item.pallet_type.should be_nil
+    end
+
+    it 'can be set and read' do
+      valid_item.pallet_type = 'Plain'
+      valid_item.pallet_type.should == 'Plain'
+    end
+  end
+
+  describe ".pallet_nature" do
+    it 'defaults to nil' do
+      valid_item.pallet_nature.should be_nil
+    end
+
+    it 'can be set and read' do
+      valid_item.pallet_nature = 'Not Required'
+      valid_item.pallet_nature.should == 'Not Required'
+    end
+  end
+
 end
