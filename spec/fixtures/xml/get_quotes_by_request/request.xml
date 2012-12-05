@@ -18,11 +18,11 @@
           <packaging>Parcel</packaging>
           <qualifierFreightGeneralFragile>N</qualifierFreightGeneralFragile>
           <distanceMeasurementType>Centimetres</distanceMeasurementType>
-          <weightMeasurementType>Kilograms</weightMeasurementType>
+          <weightMeasurementType>Grams</weightMeasurementType>
           <length>10</length>
           <width>10</width>
           <height>10</height>
-          <weight>1</weight>
+          <weight>1000</weight>
           <quantity>2</quantity>
           <description>Contains hats.</description>
         </anything>
