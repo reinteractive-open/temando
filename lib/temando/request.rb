@@ -8,16 +8,15 @@ module Temando
   # Example:
   #   request = Temando::Request.new
   #
-  #   # Add the items to be shipped
-  #   request.items << Temando::Item::GeneralGoods.new(...)
-  #   request.items << Temando::Item::GeneralGoods.new(...)
+  #   Ship an item 40cm x 20cm x 30cm that weights 1kg
+  #   request.items << Temando::Item::GeneralGoods.new(length: 0.4, height: 0.2, width: 0.3, quantity: 1, weight: 1)
   #
-  #   # Add the details for the actual shipment method and its locations
+  #   Add the details for the actual shipment method and its locations
   #   anywhere = Temando::Delivery::DoorToDoor.new
-  #   anywhere.origin      = Temando::Location.new(...)
-  #   anywhere.destination = Temando::Location.new(...)
+  #   anywhere.origin      = Temando::Location.new(suburb: 'South Melbourne', postcode: '3205', country: 'AU')
+  #   anywhere.destination = Temando::Location.new(suburb: 'Traralgon', postcode: '3844', country: 'AU')
   #
-  #   # Ask the server for the quotes
+  #   Ask the server for the quotes
   #   quotes = request.quotes_for(anywhere)
   #
   #   quotes.first # => #<Temando::Quote>
